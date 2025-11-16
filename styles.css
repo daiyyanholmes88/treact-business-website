@@ -295,63 +295,82 @@ Quality work
 
 */
 
-.quality-row {
-	display:flex;
-	justify-content: space-between;
-	align-items:center;
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-  gap: 12px;
+/* Layout */
+.quality-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:48px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .quality-container {
 	padding: 80px 0;
 }
 
-.quality-titles,
 .quality-desc {
-	width:50%;
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	margin-right:auto;
-	display: block;
-
+  font-size: 50px;       /* ↓ smaller body text */
+  line-height: 1.5;
+  color: #4a5568;
+  margin: 0 0 16px;
 }
 
-.quality-desc {       /* paragraph smaller than heading */
- font-size: 3.0rem;
-  font-weight:600;
-  line-height: 1.0;
-  color: black;            /* gray text */
-  margin-bottom: 24px;
+.quality-desc span {
+  display: block;     /* <--- stacks each span */
 }
 
-.quality-title {
-  font-size: 1.2rem;      /* Smaller title */
-  color: #6415ff;
-  text-align: left;       /* Align left */
-  margin-bottom: 8px;     /* Less space below */
-  width: 100%;
-  display: block;
-}
-
-.quality-right {
+.quality-right{ 
   flex-basis: 50%;
-  max-width: 50%;
+  width: 50%;
   display: flex;
-  justify-content: flex-end; /* Ensures image is on the right */
+  justify-content: flex-end;
   align-items: center;
-  padding-right: 32px;
+  padding-right: 30px; 
+}
+
+/* Update title styling for your h2 with spans */
+.quality-title{
+  font-size: 18px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  color: #6415ff;
+  margin:0 0 16px;
+}
+
+.quality-lorem {
+  color: #6b7280;
+  font-size: 1rem;                    /* Smaller than quality-desc */
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 50ch;
+  margin: 16px 0 24px 0;
+}
+
+
+.quality-title,
+.quality-desc {
+  text-align: left;
+}
+
+/* Stacking logic */
+.quality-title span:first-child {
+  display: block; /* Designed & Developed */
+}
+
+.quality-title span:nth-child(2),
+.quality-title span:nth-child(3) {
+  display: inline; /* by Professionals. */
 }
 
 .quality-right img {
-  width: 100%;
-  flex-basis: 50%;
-  display: flex;
-  text-align:center;
-  transform: translateY(-20px);
+  width: 420px;       /* Set maximum width limit */
+  height: auto;  
+  margin-right: 15px;           /* Maintain aspect ratio */
+  display: block;
+  transform: translateY(0); /* Removed the -20px vertical offset */
 }
 
 .btn--quality {
@@ -472,29 +491,45 @@ values
 
 */
 
-#values .row {
+.values-row {
 	display:flex;
 	justify-content: space-between;
 	align-items: center;
+  gap:40px;
+}
+
+#values .container {
+  padding: 80px 0;
 }
 
 .values-list-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 40px;
-  flex-wrap: wrap;     /* Allows wrapping on small screens */
+  margin-bottom: 32px;
 }
 
 .value-item {
-  flex: 1 1 45%;     /* Responsive width */
-  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex:1 1 45%;
+  max-width: 45%;             /* Maximum 45% width each for side by side */
 }
 
-.value-side-row {
-  display: flex;          /* row layout */
-  align-items: center;    /* vertically center icon with text */
-  gap: 12px;              /* space between icon and title */
+.value-title-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+
+.value-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .value-icon {
@@ -510,35 +545,47 @@ values
 }
 
 .value-desc {
-  margin-top: 0;        /* space under title */
-  color: #6b7280;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 100%;            /* Use full width of parent instead of 350px */
+  text-align: space-between;
 }
 
 .values-desc {
-  font-size: 2.2rem;      /* Big letters */
+  font-size: 3.5rem;      /* Big letters */
   font-weight: 900;       /* Bold */
-  color: #222;            /* Dark color for visibility */     /* Centered text */
+  color: #222;            /* Dark color for visibility */
   margin-bottom: 18px;
   letter-spacing: 0.5px;  /* Optional: slight spacing */
 }
 
-.values-row {
+.values-desc span {
+display: block;          /* makes each span go on its own line */
+}
+
+.values-desc .purple {
+  color: #6415ff;          /* keep your highlight accent */
+}
+
+.value-title-row {
   display: flex;
-  align-items: flex-start;
-  gap: 40px;
+  align-items: center; /* icon + title in one row */
+  gap: 12px;
 }
 
-.values-left-img {
-  flex-basis: 50%;
-  max-width: 50%;
+@media (max-width: 900px) {
+  .values-left, 
+  .values-right-img { 
+    flex-basis: 100%; 
+    max-width: 100%; 
+  }
 }
 
-.values-left-img img {
+.values-right-img img {
   width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
+  max-width: 1200px; /* or 700px, or even 800px */
+  height: auto; 
 }
 
 .btn--values {
@@ -557,7 +604,12 @@ values
 }
 
 .values-lorem {
-  margin-bottom: 32px;   /* Adds space below the lorem paragraph */
+  font-size:1rem;
+  line-height:1.8;
+  max-width:50ch;
+  margin-bottom: 32px; 
+  color:#000;  /* Adds space below the lorem paragraph */
+  text-align: left;
 }
 
 /*
@@ -900,21 +952,18 @@ footer {
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
-  margin-top: 40px;
 }
 
 .footer-logo-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   margin-top: 32px;
   padding-bottom: 16px;
 }
 
 .footer-logo-left {
-  position: absolute;
-  left: 36px;
-  bottom: 30px;
   display: flex;
   align-items: center;
   gap: 18px;
@@ -940,12 +989,9 @@ footer .container {
 
 /* Social icons in bottom right */
 .footer-social-icons {
-  position: absolute;
-  right: 32px;
-  bottom: 32px;
   display: flex;
   gap: 16px;
-  align-items: flex-end;         /* Align icons to the bottom */
+  align-items: center;
 }
 
 .footer-icon img {
@@ -958,6 +1004,16 @@ footer .container {
 .footer-icon img:hover {
   filter: brightness(0.7) invert(0.7);
 }
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 32px;
+  padding-bottom: 16px;
+}
+
 
 /*
 
@@ -1071,7 +1127,7 @@ mobile responsiveness
   border: none;
   outline: none;
   font-size: 1rem;
-  padding: 12px 16px;
+  padding: 10px 16px;
   border-radius: 999px;
   flex: 1;
   background: transparent;

@@ -1,5 +1,102 @@
-git init daiyyanholmes88 
-git add . My first project completed
-git commit- abdul rahim daiyyan completed
-git remote add origin https://github.com/daiyyanholmes88/my-first-project.git
-git push -https://github.com/daiyyanholmes88/myfirstproject.git (push)
+# === WHAT IS COMMAND PROMPT? ===
+
+# Command Prompt (cmd) is a text-based interface on Windows
+# - It's a black window where you type commands instead of clicking
+# - Also called "terminal", "console", or "command line"
+# - Allows you to run programs and navigate your computer with text commands
+
+# HOW TO RECOGNIZE COMMAND PROMPT:
+# - Black window with white text
+# - Shows something like: C:\Users\User>
+# - Has a blinking cursor waiting for you to type
+
+# === HOW TO GET PERSONAL ACCESS TOKEN ===
+
+# STEP-BY-STEP INSTRUCTIONS:
+
+# 1. Go to GitHub.com and make sure you're logged in
+# 2. Click your profile picture (top right corner)
+# 3. Click "Settings" from the dropdown menu
+# 4. Scroll down in the left sidebar and click "Developer settings"
+# 5. Click "Personal access tokens"
+# 6. Click "Tokens (classic)" 
+# 7. Click "Generate new token" button
+# 8. Click "Generate new token (classic)"
+
+# TOKEN SETTINGS:
+# - Note: Type "My Project Token" or "VS Code Git Access"
+# - Expiration: Select "No expiration" (or 90 days if you prefer)
+# - Scopes: Check the "repo" checkbox (this gives full repository access)
+# - Scroll down and click "Generate token"
+# IMPORTANT:
+# - Copy the token immediately - you won't see it again!
+# - It looks like: ghp_1234567890abcdefghijklmnopqrstuvwxyz
+# - Save it somewhere safe (like Notepad) for now
+# - Use THIS token as your password when git asks
+
+# TROUBLESHOOTING:
+# - If you can't find "Developer settings", go to github.com/settings/tokens
+# - If token doesn't work, make sure you copied it completely
+# - If you lost your token, delete it and create a new one
+
+# === TERMINAL COMMANDS - STEP BY STEP ===
+
+# STEP 1: Open Command Prompt
+# - Press Windows + R
+# - Type "cmd" and press Enter
+# - You should see: C:\Users\User>
+
+# STEP 2: Navigate to your project folder
+cd /d "C:\Users\User\OneDrive\Desktop\project"
+
+# STEP 3: Initialize Git (run these one by one)
+git init
+
+# STEP 4: Configure your Git identity
+git config --global user.name "Daiyyan Holmes"
+
+git config --global user.email "daiyyanholmes88@gmail.com"
+
+# STEP 5: Add all files to staging
+git add .
+
+# STEP 6: Commit your files
+git commit -m "feat: my first project completed"
+
+# STEP 7: Connect to GitHub repository
+git remote add origin https://github.com/daiyyanholmes88/Myfirstproject.git
+
+# STEP 8: Set main branch
+git branch -M main
+
+# STEP 9: Push to GitHub (will ask for credentials)
+git push -u origin main
+
+# WHEN STEP 9 ASKS FOR CREDENTIALS:
+# Username: daiyyanholmes88
+# Password: [PASTE YOUR PERSONAL ACCESS TOKEN HERE]
+
+# === FINAL ACTION CHECKLIST - DO THESE NOW ===
+
+# STEP 1: ✅ REPOSITORY ALREADY CREATED
+# Repository exists at: https://github.com/daiyyanholmes88/Myfirstproject
+
+# STEP 2: OPEN TERMINAL AND RUN COMMANDS
+# - Press Windows + R
+# - Type "cmd" and press Enter
+# - Copy and paste each command from the "QUICK START SUMMARY" section above
+# - Press Enter after each command
+# - Wait for each command to finish before running the next one
+
+# STEP 3: WHEN GIT PUSH ASKS FOR CREDENTIALS
+# Username: daiyyanholmes88
+# Password: [YOUR_PERSONAL_ACCESS_TOKEN] (not your GitHub password!)
+
+# === STATUS CHECK ===
+# ✅ Repository created on GitHub? YES
+# ⏳ Terminal open and in correct folder?
+# ⏳ Personal Access Token ready?
+# ⏳ All commands from QUICK START SUMMARY executed?
+
+# If all ✅ then visit: https://github.com/daiyyanholmes88/Myfirstproject
+# You should see your files there!
