@@ -30,7 +30,8 @@
 # - Scroll down and click "Generate token"
 # IMPORTANT:
 # - Copy the token immediately - you won't see it again!
-# - It looks like: ghp_1234567890abcdefghijklmnopqrstuvwxyz
+# - NEW FORMAT: github_pat_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# - OLD FORMAT: ghp_1234567890abcdefghijklmnopqrstuvwxyz
 # - Save it somewhere safe (like Notepad) for now
 # - Use THIS token as your password when git asks
 
@@ -311,3 +312,79 @@ git push origin main
 # - Command Prompt: More technical, precise control
 # - VS Code: Visual, beginner-friendly interface
 # - Both do the same thing - choose what you prefer!
+
+# === PERSONAL ACCESS TOKEN NOT WORKING? TROUBLESHOOTING ===
+
+# COMMON REASONS YOUR TOKEN FAILED:
+
+# 1. TOKEN WAS COPIED INCORRECTLY
+# - Make sure you copied the ENTIRE token
+# - NEW tokens start with "github_pat_" (fine-grained tokens)
+# - OLD tokens start with "ghp_" (classic tokens)
+# - Your token starting with "github_pat" is CORRECT and newer!
+# - No spaces before or after the token
+# - Copy it exactly as shown (case-sensitive)
+
+# 2. WRONG SCOPES SELECTED
+# - You MUST check the "repo" checkbox when creating token
+# - Without "repo" scope, you can't push to repositories
+
+# 3. TOKEN EXPIRED
+# - If you set expiration, the token may have expired
+# - Check expiration date in GitHub settings
+
+# 4. USING WRONG USERNAME
+# - Make sure username is exactly: daiyyanholmes88
+# - Not your email, not your display name
+
+# === HOW TO CREATE A NEW TOKEN (STEP BY STEP) ===
+
+# STEP 1: Delete the old token first
+# - Go to https://github.com/settings/tokens
+# - Find your old token
+# - Click "Delete" next to it
+
+# STEP 2: Create new token
+# - Click "Generate new token"
+# - Click "Generate new token (classic)"
+# - Note: "My New Project Token"
+# - Expiration: "No expiration"
+# - Scopes: CHECK "repo" (full control of private repositories)
+# - Scroll down and click "Generate token"
+
+# STEP 3: Copy the new token IMMEDIATELY
+# - Select ALL the text (it's very long!)
+# - Right-click and copy
+# - Paste it in Notepad to save it
+# - NEW FORMAT: github_pat_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# - OLD FORMAT: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# === TEST YOUR NEW TOKEN ===
+
+# After creating new token, test it:
+cd /d "C:\Users\User\OneDrive\Desktop\project"
+git push origin main
+
+# When prompted:
+# Username: daiyyanholmes88
+# Password: [PASTE YOUR NEW TOKEN - NOT YOUR GITHUB PASSWORD]
+
+# === ALTERNATIVE: USE GITHUB DESKTOP ===
+
+# If tokens keep failing, try GitHub Desktop app:
+# 1. Download GitHub Desktop from desktop.github.com
+# 2. Sign in with your GitHub account
+# 3. Clone your repository: https://github.com/daiyyanholmes88/Myfirstproject
+# 4. Make changes and commit through the app
+
+# === STILL NOT WORKING? CHECK THESE ===
+
+# 1. Make sure repository exists:
+# Visit: https://github.com/daiyyanholmes88/Myfirstproject
+# If you see "404 Not Found" - create the repository first
+
+# 2. Check if you're signed into correct GitHub account
+# 3. Try incognito/private browser window to create token
+# 4. Make sure you have internet connection
+
+# The token should work if created correctly with "repo" scope!
