@@ -1194,6 +1194,105 @@ mobile responsiveness
   text-align: left;
 }
 
+/* =========================
+   SIMPLE RESPONSIVE RULES
+   ========================= */
+
+/* 1) TABLET – make big sections a bit softer */
+@media (max-width: 1024px) {
+  /* hero */
+  .landing__row {
+    gap: 24px;
+  }
+
+  /* quality / values / steps / testimonials rows: a little tighter */
+  .quality-row,
+  .values-row,
+  .steps-row,
+  .testimonials-row {
+    gap: 24px;
+  }
+
+  footer {
+    padding: 80px 32px;
+  }
+}
+
+/* 2) TABLET + PHONE – STACK LEFT/RIGHT SECTIONS */
+@media (max-width: 768px) {
+  /* NAV: logo on top, links under */
+  .nav__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  /* HERO main row */
+  .landing__row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .landing__left,
+  .landing__right {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  /* QUALITY, VALUES, STEPS, TESTIMONIALS – stack */
+  .quality-row,
+  .values-row,
+  .steps-row,
+  .testimonials-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .quality-right img,
+  .values-right-img img,
+  .steps-left img,
+  .testimonials-left-img img {
+    max-width: 100%;
+  }
+
+  /* PRICING cards: one per row on phones */
+  .pricing-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-item {
+    width: 92%;
+    max-width: 560px;
+  }
+}
+
+/* 3) SMALL PHONES – reduce padding & big fonts */
+@media (max-width: 640px) {
+  .container {
+    padding: 60px 0;
+  }
+
+  section {
+    padding: 0 16px;
+  }
+
+  .features-desc,
+  .steps-desc,
+  .values-desc,
+  .testimonials-desc,
+  .pricing-desc {
+    font-size: 2rem; /* slightly smaller big headings */
+  }
+
+  main {
+    margin-bottom: 60px;
+  }
+}
+
+
 
 
 
